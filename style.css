@@ -1,43 +1,89 @@
-body { background: #fdf6f7; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; font-family: 'Dancing Script', cursive; margin: 0; }
-.slide { display: none; background: #ffffff; padding: 30px; border-radius: 25px; box-shadow: 0 15px 30px rgba(0,0,0,0.15); text-align: center; width: 350px; animation: moveIn 0.7s ease-in-out; }
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+body { 
+    background: #fff0f5; 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Dancing Script', cursive; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    min-height: 100vh; 
+    overflow-x: hidden; 
+}
+
+/* স্লাইড ডিজাইন */
+.slide { 
+    display: none; 
+    background: white; 
+    padding: 30px; 
+    border-radius: 30px; 
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15); 
+    text-align: center; 
+    width: 350px; 
+    animation: moveIn 0.8s ease-in-out; 
+}
+
 .slide.active { display: block; }
-img { width: 100%; border-radius: 15px; border: 4px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+
+img { width: 100%; border-radius: 20px; border: 4px solid #fff; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
 h2 { color: #ff6b8b; font-size: 28px; margin: 15px 0; }
 p { font-size: 18px; color: #555; line-height: 1.5; }
-button { margin-top: 25px; padding: 12px 25px; font-size: 16px; border: none; border-radius: 30px; background: #ff6b8b; color: white; cursor: pointer; transition: 0.3s; }
+
+button { 
+    margin-top: 25px; 
+    padding: 12px 25px; 
+    font-size: 16px; 
+    border: none; 
+    border-radius: 30px; 
+    background: #ff6b8b; 
+    color: white; 
+    cursor: pointer; 
+    transition: 0.3s; 
+}
 button:hover { background: #ff4d72; transform: scale(1.05); }
 
-@keyframes moveIn { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
-/* বাম পাশে অ্যানিমেটেড কার্টুন */
+/* অ্যানিমেটেড কার্টুন বা স্টিকার (ডান ও বাম পাশের খালি জায়গা) */
+body::before, body::after {
+    content: "";
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+/* বাম পাশের কার্টুন */
 body::before {
-    content: "🌸"; /* https://tenor.com/view/girl-anime-smile-gif-cute-gif/*
-    position: fixed;
-    left: 10%;
-    top: 30%;
-    font-size: 80px;
-    animation: floatLeft 3s ease-in-out infinite;
-    z-index: -1;
+    left: 5%;
+    top: 15%;
+    background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJ4ZzVqbm9qZWJqZzVqbm9qZWJqZzVqbm9qZWJqZzVqbm9qZWJqJmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3o7TKM44w8M1o39u8o/giphy.gif');
+    animation: floatLeft 5s infinite alternate;
 }
 
-/* ডান পাশে অ্যানিমেটেড কার্টুন */
+/* ডান পাশের কার্টুন */
 body::after {
-    content: "✨"; /* এখানে অন্য স্টিকারের URL বসাতে পারেন */
-    position: fixed;
-    right: 10%;
-    top: 50%;
-    font-size: 80px;
-    animation: floatRight 4s ease-in-out infinite;
-    z-index: -1;
+    right: 5%;
+    bottom: 10%;
+    background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJ4ZzVqbm9qZWJqZzVqbm9qZWJqZzVqbm9qZWJqZzVqbm9qZWJqJmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/l41lTjJp90ZlJq19u/giphy.gif');
+    animation: floatRight 6s infinite alternate;
 }
 
-/* বাম পাশের অ্যানিমেশন */
+/* অ্যানিমেশন মুভমেন্ট */
 @keyframes floatLeft {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-50px) rotate(10deg); }
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-40px) rotate(10deg); }
 }
 
-/* ডান পাশের অ্যানিমেশন */
 @keyframes floatRight {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(50px) rotate(-10deg); }
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(40px) rotate(-10deg); }
+}
+
+@keyframes moveIn { 
+    from { opacity: 0; transform: translateX(50px); } 
+    to { opacity: 1; transform: translateX(0); } 
 }
