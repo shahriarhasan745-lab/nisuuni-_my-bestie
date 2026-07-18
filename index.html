@@ -8,36 +8,70 @@
 </head>
 <body>
 
-    <header>
-        <h1>Our Beautiful Memories</h1>
-    </header>
-
-    <div class="main-container">
-        <!-- Photo 1 -->
-        <section class="scrap-section">
-            <div class="photo-card">
-                <img src="Screenshot%202026-07-19%20003559.png">
-                <div class="text-content">
-                    <h2>1. Soft Elegance</h2>
-                    <p>There is something effortlessly beautiful about the way you carry yourself in this picture. Your gentle smile, paired with the soft lighting and delicate flower filter, creates a peaceful atmosphere that feels warm and comforting. Beauty isn't always loud; sometimes it quietly exists in a simple expression, and this photo captures that perfectly. It's the kind of picture that reminds people how graceful simplicity can be.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Photo 2 -->
-        <section class="scrap-section">
-            <div class="photo-card">
-                <img src="Screenshot%202026-07-19%20003607.png">
-                <div class="text-content">
-                    <h2>2. Timeless in Red</h2>
-                    <p>Wrapped in a beautiful red saree, you bring a timeless charm that never goes out of style. The way you're looking away with that playful expression gives the photo a cinematic feel, as if it belongs to a beautiful story waiting to be told. Your elegance doesn't come only from what you're wearing—it shines through your confidence and the natural way you present yourself.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Repeat this pattern for all 10 photos -->
-        <!-- Just replace the image src and the <h2>/ <p> content for each -->
+<div id="scrapbook-container">
+    <!-- 10টি স্লাইডের কাঠামো -->
+    <div class="slide active">
+        <img src="Screenshot 2026-07-19 003559.png" alt="Photo">
+        <h2>1. Soft Elegance</h2>
+        <p>There is something effortlessly beautiful about the way you carry yourself in this picture. Your gentle smile, paired with the soft lighting and delicate flower filter, creates a peaceful atmosphere that feels warm and comforting.</p>
     </div>
+    <div class="slide">
+        <img src="Screenshot 2026-07-19 003607.png" alt="Photo">
+        <h2>2. Timeless in Red</h2>
+        <p>Wrapped in a beautiful red saree, you bring a timeless charm that never goes out of style. The way you're looking away with that playful expression gives the photo a cinematic feel.</p>
+    </div>
+    <div class="slide">
+        <img src="Screenshot 2026-07-19 003617.png" alt="Photo">
+        <h2>3. Blooming with Grace</h2>
+        <p>This picture feels like spring captured in a single frame. The soft pink outfit, the flower in your hand, and your calm expression blend together beautifully.</p>
+    </div>
+    <div class="slide">
+        <img src="Screenshot 2026-07-19 003627.png" alt="Photo">
+        <h2>4. A Smile That Brightens the Evening</h2>
+        <p>Against the warm evening sky, your smile becomes the brightest part of the picture. The floral outfit complements the soft sunset perfectly.</p>
+    </div>
+    <div class="slide">
+        <img src="Screenshot 2026-07-19 003639.png" alt="Photo">
+        <h2>5. Lost in the Horizon</h2>
+        <p>There's something deeply artistic about this photograph. Looking toward the horizon with the city stretching behind you creates a feeling of quiet dreams.</p>
+    </div>
+    <div class="slide">
+        <img src="Screenshot 2026-07-19 003648.png" alt="Photo">
+        <h2>6. Sunlit Simplicity</h2>
+        <p>Golden sunlight has a way of making beautiful moments even more magical. Nothing about this image feels exaggerated—it simply captures a genuine moment.</p>
+    </div>
+    <div class="slide">
+        <img src="Screenshot 2026-07-19 003657.png" alt="Photo">
+        <h2>7. Beauty in Every Shade</h2>
+        <p>Wearing black with such confidence creates a striking contrast against the soft evening background. It shines naturally through presence and composure.</p>
+    </div>
+    <div class="slide">
+        <img src="Screenshot 2026-07-19 003708.png" alt="Photo">
+        <h2>8. Quiet Moments, Beautiful Memories</h2>
+        <p>There is something incredibly peaceful about the way you're looking down. The vibrant red saree adds warmth while your gentle expression keeps the mood soft.</p>
+    </div>
+    <div class="slide">
+        <img src="Screenshot 2026-07-19 003721.png" alt="Photo">
+        <h2>9. City Lights & Genuine Smiles</h2>
+        <p>This photo perfectly balances elegance and happiness. The glowing lights behind you create a beautiful atmosphere, but your genuine smile remains the highlight.</p>
+    </div>
+    <div class="slide">
+        <img src="Screenshot 2026-07-19 003730.png" alt="Photo">
+        <h2>10. A Beautiful Soul</h2>
+        <p>Looking through all these pictures together, one thing becomes clear: every photo carries its own unique mood. Some make every picture special simply by being themselves.</p>
+    </div>
+</div>
 
+<button id="next-btn" onclick="nextSlide()">Next Page 🎀</button>
+
+<script>
+    let current = 0;
+    const slides = document.querySelectorAll('.slide');
+    function nextSlide() {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+    }
+</script>
 </body>
 </html>
