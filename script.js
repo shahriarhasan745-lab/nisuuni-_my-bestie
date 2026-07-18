@@ -1,5 +1,8 @@
-document.querySelectorAll('.photo-card').forEach((card, index) => {
-    card.style.opacity = '0';
-    card.style.transition = `opacity 0.5s ease ${index * 0.1}s`;
-    setTimeout(() => { card.style.opacity = '1'; }, 100);
+window.addEventListener('scroll', () => {
+    document.querySelectorAll('.scrap-section').forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100) {
+            section.classList.add('show');
+        }
+    });
 });
