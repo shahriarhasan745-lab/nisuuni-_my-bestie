@@ -1,4 +1,3 @@
-/* Google Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
 body { 
@@ -14,7 +13,6 @@ body {
     overflow-x: hidden; 
 }
 
-/* স্লাইড ডিজাইন */
 .slide { 
     display: none; 
     background: white; 
@@ -45,34 +43,31 @@ button {
 }
 button:hover { background: #ff4d72; transform: scale(1.05); }
 
-/* অ্যানিমেটেড কার্টুন বা স্টিকার (ডান ও বাম পাশের খালি জায়গা) */
+/* অ্যানিমেটেড স্টিকার */
 body::before, body::after {
     content: "";
     position: fixed;
-    width: 200px;
-    height: 200px;
+    width: 120px;
+    height: 120px;
     background-size: contain;
     background-repeat: no-repeat;
     z-index: -1;
 }
 
-/* বাম পাশের কার্টুন */
 body::before {
-    left: 5%;
-    top: 15%;
-    background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJ4ZzVqbm9qZWJqZzVqbm9qZWJqZzVqbm9qZWJqZzVqbm9qZWJqJmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3o7TKM44w8M1o39u8o/giphy.gif');
+    left: 8%;
+    top: 20%;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3515/3515174.png');
     animation: floatLeft 5s infinite alternate;
 }
 
-/* ডান পাশের কার্টুন */
 body::after {
-    right: 5%;
-    bottom: 10%;
-    background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJ4ZzVqbm9qZWJqZzVqbm9qZWJqZzVqbm9qZWJqZzVqbm9qZWJqJmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/l41lTjJp90ZlJq19u/giphy.gif');
+    right: 8%;
+    bottom: 20%;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3515/3515183.png');
     animation: floatRight 6s infinite alternate;
 }
 
-/* অ্যানিমেশন মুভমেন্ট */
 @keyframes floatLeft {
     0% { transform: translateY(0px) rotate(0deg); }
     100% { transform: translateY(-40px) rotate(10deg); }
