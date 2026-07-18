@@ -8,63 +8,75 @@
 </head>
 <body>
 
+<!-- Cover Page -->
+<div id="cover-page">
+    <h1>To My Dearest Bestie 🎀</h1>
+    <p>A collection of memories, smiles, and beautiful moments.</p>
+    <button onclick="enterScrapbook()">Open Scrapbook ✨</button>
+</div>
+
+<!-- Scrapbook Container -->
 <div id="scrapbook-container">
-    <!-- ১০টি স্লাইড -->
     <div class="slide active">
         <img src="Screenshot 2026-07-19 003559.png">
         <h2>1. Soft Elegance</h2>
-        <p>There is something effortlessly beautiful about the way you carry yourself. Your gentle smile, paired with the soft lighting, creates a peaceful atmosphere.</p>
+        <p>There is something effortlessly beautiful about the way you carry yourself.</p>
     </div>
     <div class="slide">
         <img src="Screenshot 2026-07-19 003607.png">
         <h2>2. Timeless in Red</h2>
-        <p>Wrapped in a beautiful red saree, you bring a timeless charm that never goes out of style. Your confidence shines through every movement.</p>
+        <p>Wrapped in a beautiful red saree, you bring a timeless charm that never goes out of style.</p>
     </div>
     <div class="slide">
         <img src="Screenshot 2026-07-19 003617.png">
         <h2>3. Blooming with Grace</h2>
-        <p>This picture feels like spring captured in a single frame. The soft outfit and your calm expression blend together beautifully.</p>
+        <p>This picture feels like spring captured in a single frame.</p>
     </div>
     <div class="slide">
         <img src="Screenshot 2026-07-19 003627.png">
         <h2>4. A Smile That Brightens</h2>
-        <p>Against the warm evening sky, your smile becomes the brightest part of the picture. Simply unforgettable.</p>
+        <p>Against the warm evening sky, your smile becomes the brightest part of the picture.</p>
     </div>
     <div class="slide">
         <img src="Screenshot 2026-07-19 003639.png">
         <h2>5. Lost in the Horizon</h2>
-        <p>Looking toward the horizon with the city behind you creates a feeling of quiet dreams and endless possibilities.</p>
+        <p>Looking toward the horizon with the city behind you creates a feeling of quiet dreams.</p>
     </div>
     <div class="slide">
         <img src="Screenshot 2026-07-19 003648.png">
         <h2>6. Sunlit Simplicity</h2>
-        <p>Golden sunlight makes beautiful moments even more magical. It captures a genuine moment filled with light and natural beauty.</p>
+        <p>Golden sunlight makes beautiful moments even more magical.</p>
     </div>
     <div class="slide">
         <img src="Screenshot 2026-07-19 003657.png">
         <h2>7. Beauty in Every Shade</h2>
-        <p>Wearing black with such confidence creates a striking contrast. It shows that confidence shines naturally through presence.</p>
+        <p>Wearing black with such confidence creates a striking contrast.</p>
     </div>
     <div class="slide">
         <img src="Screenshot 2026-07-19 003708.png">
         <h2>8. Quiet Moments</h2>
-        <p>There is something incredibly peaceful about this picture. The simplicity of the moment speaks louder than anything else.</p>
+        <p>There is something incredibly peaceful about this picture.</p>
     </div>
     <div class="slide">
         <img src="Screenshot 2026-07-19 003721.png">
         <h2>9. City Lights & Smiles</h2>
-        <p>This photo perfectly balances elegance and happiness. Your genuine smile remains the true highlight of the frame.</p>
+        <p>This photo perfectly balances elegance and happiness.</p>
     </div>
     <div class="slide">
         <img src="Screenshot 2026-07-19 003730.png">
         <h2>10. A Beautiful Soul</h2>
-        <p>You make every picture special simply by being yourself. These are beautiful moments captured with elegance and charm.</p>
+        <p>You make every picture special simply by being yourself.</p>
     </div>
+    
+    <button id="next-btn" onclick="nextSlide()">Next Page 🎀</button>
 </div>
 
-<button id="next-btn" onclick="nextSlide()">Next Page 🎀</button>
-
 <script>
+    function enterScrapbook() {
+        document.getElementById('cover-page').style.display = 'none';
+        document.getElementById('scrapbook-container').style.display = 'flex';
+    }
+
     let current = 0;
     const slides = document.querySelectorAll('.slide');
     function nextSlide() {
