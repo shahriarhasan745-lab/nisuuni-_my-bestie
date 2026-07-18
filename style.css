@@ -8,3 +8,36 @@ button { margin-top: 25px; padding: 12px 25px; font-size: 16px; border: none; bo
 button:hover { background: #ff4d72; transform: scale(1.05); }
 
 @keyframes moveIn { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
+/* বাম পাশে অ্যানিমেটেড কার্টুন */
+body::before {
+    content: "🌸"; /* https://tenor.com/view/girl-anime-smile-gif-cute-gif/*
+    position: fixed;
+    left: 10%;
+    top: 30%;
+    font-size: 80px;
+    animation: floatLeft 3s ease-in-out infinite;
+    z-index: -1;
+}
+
+/* ডান পাশে অ্যানিমেটেড কার্টুন */
+body::after {
+    content: "✨"; /* এখানে অন্য স্টিকারের URL বসাতে পারেন */
+    position: fixed;
+    right: 10%;
+    top: 50%;
+    font-size: 80px;
+    animation: floatRight 4s ease-in-out infinite;
+    z-index: -1;
+}
+
+/* বাম পাশের অ্যানিমেশন */
+@keyframes floatLeft {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-50px) rotate(10deg); }
+}
+
+/* ডান পাশের অ্যানিমেশন */
+@keyframes floatRight {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(50px) rotate(-10deg); }
+}
